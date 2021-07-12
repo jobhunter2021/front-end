@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/plugins/select2-bootstrap4-theme-master/dist/select2-bootstrap4.min.css">
+    <link rel="stylesheet" href="/public/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="/public/plugins/summernote/summernote.min.css">
+    <link rel="stylesheet" href="/public/style/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">JH</a>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Lowongan</a>
+                </li>
+
+                <div class="nav-item">
+                    <a class="nav-link" href="#">Kandidat</a>
+                </div>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PT. Karya Cipta Karsa
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb-custom">
+            <div class="title">
+                Profile Perusahaan
+            </div>
+            <div class="description">
+                <small> Ubah informasi dasar, email atau kata sandi </small>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <h1>
+                            Informasi Dasar
+                        </h1>
+                    </div>
+
+                    <div class="content-card-body">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <label for="name">Nama Perusahaan</label>
+                                <input type="text" name="name" class="form-control" id="name"
+                                    placeholder="Silahakn masukan nama perusahaan/firma/institusi Anda"
+                                    value="PT.Karya Cipta Karsa">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Alamat Kantor</label>
+                                <input type="text" name="address" class="form-control" id="address"
+                                    placeholder="Silahakn masukan alamat lengkap kantor Anda"
+                                    value="Jl.Ir.H. Juanda No.8A bandung">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Alamat Kantor</label>
+                                <input type="text" name="address" class="form-control" id="address"
+                                    placeholder="Silahakn masukan alamat lengkap kantor Anda"
+                                    value="Jl.Ir.H. Juanda No.8A bandung">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="name">Kontak Kantor</label>
+                                    <input type="text" name="contact" class="form-control" id="contact"
+                                        placeholder="Slilahakan isi kontak(handphone, ID LIne, WA dll)"
+                                        value="021-242544">
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="name">Sektor Industri</label>
+                                        <select name="field" class="form-control" id="field">
+                                            <option value="">Pilih sektor industri</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Example textarea</label>
+                                <textarea class="form-control" id="description" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <h1>
+                            Ubah Email
+                        </h1>
+                    </div>
+
+                    <div class="content-card-body">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <p>
+                                    Email Anda saat ini adalah <b>karyaciptakarsa@gmail.com</b>
+                                </p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Baru</label>
+                                <input type="text" name="email" class="form-control" id="email"
+                                    placeholder="Silahakn masukan email baru">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="currrent_password">Kata Sandi</label>
+                                <input type="password" name="currrent_password" class="form-control"
+                                    id="currrent_password" placeholder="Silahakn masukan kata sandi Anda">
+                            </div>
+
+                            <div class="form-group">
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary">Ubah</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <h1>
+                            Ubah Kata sandi
+                        </h1>
+                    </div>
+
+                    <div class="content-card-body">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <label for="currrent_password">Kata Sandi Saat Ini</label>
+                                <input type="password" name="currrent_password" class="form-control"
+                                    id="currrent_password" placeholder="Silahakn masukan kata sandi Anda saat ini">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="new_password">Kata Sandi Baru</label>
+                                <input type="password" name="new_password" class="form-control" id="new_password"
+                                    placeholder="Silahakn masukan kata sandi baru">
+                            </div>
+
+                            <div class="form-group">
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary">Ubah</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/public/plugins/jquery/jquery.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="/public/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/public/plugins/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="/public/plugins/summernote/summernote.min.js"></script>
+    <script src="/public/plugins/summernote/summernote-bs4.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $.getJSON("/public/data/industries.json", function (data) {
+                const industries_data = data.industries
+                industries_data.forEach(element => {
+                    $("#field").append(`<option value="${element}">${element}</option>`)
+                })
+            }).fail(function () {
+                console.log("error euy")
+            })
+
+            $("#field").select2({
+                theme: 'bootstrap4'
+            })
+
+            $("#description").summernote({
+                height: 300,                 // set editor height
+                minHeight: null,             // set minimum height of editor
+                maxHeight: null,             // set maximum height of editor
+                focus: true                  // set focus to editable area after initializing summernote
+            })
+        })
+    </script>
+</body>
+
+</html>

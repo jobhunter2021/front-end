@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/style/main.css">
+    <link rel="stylesheet" href="/public/plugins/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class=" h-100 d-flex justify-content-center align-items-center">
+        <div class="custom-card-lg">
+            <div class="custom-card-header">
+                <h1>Registrasi</h1>
+                <p>
+                    Atau <a href="/authentication/signin.html">masuk dengan akun Anda</a>
+                </p>
+            </div>
+            <div class="custom-card-body">
+                <form action="#" method="post">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input name="first_name" type="text" class="form-control" id="first_name"
+                                    placeholder="Nama depan">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input name="last_name" type="text" class="form-control" id="last-name"
+                                    placeholder="Nama belakang">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="birth_date" id="birth_date" class="form-control"
+                            placeholder="Tanggal lahir" onfocus="(this.type='date')" onblur="(this.type='text')">
+                    </div>
+
+                    <div class="form-group">
+                        <input name="contact" type="text" class="form-control" id="contact"
+                            placeholder="Kontak (Handphone, ID Line, WA dll)">
+                    </div>
+
+                    <div class="form-group">
+                        <input name="address" type="text" class="form-control" id="address"
+                            placeholder="Alamat lengkap">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
+                            placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" id="password"
+                            placeholder="Kata sandi">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" name="confirm_password" class="form-control" id="confirm_password"
+                            placeholder="Konfirmasi kata sandi">
+                    </div>
+                  
+                    <div class="form-group">
+                        <p>
+                            <small>
+                                Saya menyetujui <a href="">persyaratan</a> dan telah membaca
+                                dan mengakui <a href="">pernyataan privasi</a>.
+                            </small>
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block">Daftar</button>
+                        <button class="btn btn-success btn-block">Lanjutkan dengan Gmail</button>
+                    </div>
+
+                    <div class="form-group">
+                        Daftar sebagai perusahaan <a href="/authentication/company-signup.html">disini</a> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/public/plugins/jquery/jquery.js"></script>
+    <script src="/public/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

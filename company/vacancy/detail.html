@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/plugins/datatable/datatables.min.css">
+    <link rel="stylesheet" href="/public/style/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">JH</a>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Lowongan</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kandidat</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PT. Karya Cipta Karsa
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb-custom">
+            <div class="title">
+                Detail Lowongan
+            </div>
+            <div class="description">
+                <small>Detail lowongan Backend Programmer</small>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <div class="content-card-header">
+                <h1>
+                    Backend Programmer
+                </h1>
+            </div>
+
+            <div class="content-card-body">
+                <div class="vacancy-info mb-4">
+                    <div class="label">Deskripsi Pekerjaan</div>
+                    <div class="info">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget mauris odio. Nunc
+                        consectetur dolor varius tellus ullamcorper, quis suscipit libero accumsan. Maecenas blandit
+                        lacus eget massa lacinia dignissim. Vestibulum mattis vel diam vitae pellentesque. Pellentesque
+                        habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas
+                        viverra, mi pharetra posuere malesuada, nibh enim lacinia tortor, sed lacinia eros velit a
+                        justo. Vestibulum sollicitudin libero nec ipsum tincidunt, eget consectetur purus volutpat. In
+                        justo lectus, lobortis quis nulla quis, auctor lacinia neque.
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="vacancy-info">
+                            <div class="label">Gaji</div>
+                            <div class="info">RP.3500.000.00</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex justify-content-end">
+                            <div class="vacancy-info">
+                                <div class="label">Pengalaman Minimal (Thn)</div>
+                                <div class="info">1 Tahun</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vacancy-info">
+                    <div class="label">Keahlian Yang dibutuhkan</div>
+                    <div class="info">
+                        <ul>
+                            <li>Go</li>
+                            <li>Kotlin</li>
+                            <li>Nodejs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <div class="content-card-header d-flex justify-content-between">
+                <div>
+                    <h1>
+                        Pelamar
+                    </h1>
+                </div>
+
+                <div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <select name="showby" id="showby" class="form-control form-control-sm">
+                                <option value="all">Semua</option>
+                                <option value="waiting">Belum Dikonfirmasi</option>
+                                <option value="reviewed">Telah Direview</option>
+                                <option value="rejected">Ditolak</option>
+                                <option value="accepted">Diterima</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <form id="byname">
+                                <input type="text" name="name" id="search_name" class="form-control form-control-sm"
+                                    placeholder="Cari nama pelamar">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card-body">
+                <div class="row" id="applicant">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="review_cv" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="reviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reviewModalLabel">Review CV</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="content-card">
+                                <img src="/public/img/man.jpg" class="rounded-circle mx-auto d-block" height="150"
+                                    width="150" alt="...">
+                                <div class="applicant-info mt-3">
+                                    <div class="label">
+                                        Status Kerja
+                                    </div>
+                                    <div class="info">
+                                        Siap Kerja
+                                    </div>
+                                </div>
+
+                                <div class="applicant-info">
+                                    <div class="label">
+                                        Keahlian
+                                    </div>
+                                    <div class="info">
+                                        <ul>
+                                            <li>Go</li>
+                                            <li>Node</li>
+                                            <li>Javascript</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-10">
+                            <div class="content-card">
+                                <div class="mb-4">
+                                    <h3>
+                                        Emanuel Burgess
+                                    </h3>
+                                    <small>
+                                        Backend Engineer
+                                    </small>
+                                </div>
+
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab"
+                                            href="#basicInfo" role="tab" aria-controls="basicInfo"
+                                            aria-selected="true">Informasi Dasar</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" id="reference-tab" data-toggle="tab" href="#reference"
+                                            role="tab" aria-controls="reference" aria-selected="false">Referensi
+                                            Kerja</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" id="experience-tab" data-toggle="tab" href="#experience"
+                                            role="tab" aria-controls="experience" aria-selected="false">Pengalaman</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" id="education-tab" data-toggle="tab" href="#education"
+                                            role="tab" aria-controls="education" aria-selected="false">Pendidikan</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" id="achievement-tab" data-toggle="tab" href="#achievement"
+                                            role="tab" aria-controls="achievement" aria-selected="false">Pencapaian</a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="basicInfo" role="tabpanel"
+                                        aria-labelledby="basicInfo-tab">
+                                        <div class="applicant-info mt-4">
+                                            <!-- informasi dasar -->
+                                            <div class="label">
+                                                Informasi Dasar Pelamar
+                                            </div>
+                                            <div class="info">
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-2">
+                                                        Nama Lengkap
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        Emanuel Burgess
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-2">
+                                                        Tanggal Lahir
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        14-february-1997
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-2">
+                                                        Kontak
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        08112123255
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-2">
+                                                        Alamat
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        Jl.Ir.H. Juanda No.8 Bandung
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-2">
+                                                        Email
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        emanuelburgess@gmail.com
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-2">
+                                                        Website Pribadi
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        www.emanuel.com
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="reference" role="tabpanel"
+                                        aria-labelledby="reference-tab">
+                                        <div class="row mt-4">
+                                            <div class="col-sm-6">
+                                                <div class="applicant-info">
+                                                    <div class="label">
+                                                        Gaji minimal yang diinginkan
+                                                    </div>
+                                                    <div class="info">
+                                                        Rp.3.500.000.00
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="applicant-info">
+                                                    <div class="label">
+                                                        Gaji maksimal yang diinginkan
+                                                    </div>
+                                                    <div class="info">
+                                                        Rp.5.250.000.00
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="applicant-info">
+                                                    <div class="label">
+                                                        Portabilitas kerja yang diminati
+                                                    </div>
+                                                    <div class="info">
+                                                        Remote
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="applicant-info">
+                                                    <div class="label">
+                                                        Jenis Pekerjaan yang diminati
+                                                    </div>
+                                                    <div class="info">
+                                                        Purna waktu
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="experience" role="tabpanel"
+                                        aria-labelledby="experience-tab">
+
+                                        <div class="mt-4" id="experience-list">
+                                            <div class="row mb-4">
+                                                <div class="col-sm-2">
+                                                    <img src="/public/img/Company Logo/Blibli.png"
+                                                        class="rounded-circle mx-auto d-block" height="100" width="100"
+                                                        alt="...">
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <div class="mb-2">
+                                                        <small>PT.Blibli Indonesia</small><br>
+                                                        <b>Backend Programmer</b><br>
+                                                        <small>dari 14-maret-2020 s/d 14-mei-2021</small><br>
+                                                    </div>
+                                                    <p>
+                                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure,
+                                                        voluptatibus velit perspiciatis quos minus, a minima, iusto
+                                                        corporis soluta aliquid laborum incidunt vitae unde. Commodi
+                                                        quaerat error rerum praesentium vero!
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-4">
+                                                <div class="col-sm-2">
+                                                    <img src="/public/img/Company Logo/netflix-logo-2-1.jpg"
+                                                        class="rounded-circle mx-auto d-block" height="100" width="100"
+                                                        alt="...">
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <div class="mb-2">
+                                                        <small>PT.Netflix Indonesia</small><br>
+                                                        <b>Fullstack Programmer</b><br>
+                                                        <small>dari 14-maret-2020 s/d 14-mei-2021</small><br>
+                                                    </div>
+                                                    <p>
+                                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure,
+                                                        voluptatibus velit perspiciatis quos minus, a minima, iusto
+                                                        corporis soluta aliquid laborum incidunt vitae unde. Commodi
+                                                        quaerat error rerum praesentium vero!
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="education" role="tabpanel"
+                                        aria-labelledby="education-tab">
+                                        <div class="mt-4" id="education-list">
+                                            <div class="row mb-4">
+                                                <div class="col-sm-2">
+                                                    <img src="/public/img/Other Logo/Harvard.png"
+                                                        class="rounded-circle mx-auto d-block" height="100" width="100"
+                                                        alt="...">
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <div class="mb-3">
+                                                        <small>University/College</small><br>
+                                                        <b>Hardvard Univerisity</b><br>
+                                                        <small>dari 14-maret-2020 s/d 14-mei-2021</small><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-4">
+                                                <div class="col-sm-2">
+                                                    <img src="/public/img/Other Logo/Warer Avenue Elementary School.gif"
+                                                        class="rounded-circle mx-auto d-block" height="100" width="100"
+                                                        alt="...">
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <div class="mb-3">
+                                                        <small>Elementary</small><br>
+                                                        <b>Warner Avenue Elemenatry School</b><br>
+                                                        <small>dari 14-maret-2020 s/d 14-mei-2021</small><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="achievement" role="tabpanel"
+                                        aria-labelledby="achievement-tab">
+                                        <div class="mt-4" id="achievement-list">
+                                            <div class="mb-3">
+                                                <b>SIDUKAPMI</b><br>
+                                                <small class="text-danger">Proyek</small>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quam
+                                                    fugit libero saepe vero aspernatur totam pariatur, dicta neque aut
+                                                    itaque dignissimos placeat deserunt ipsa, asperiores vitae
+                                                    recusandae? Illum, temporibus.
+                                                </p>
+                                                <small>
+                                                    14-mei-2019
+                                                </small>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <b>Eagle Eye</b><br>
+                                                <small class="text-muted">Paten</small>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quam
+                                                    fugit libero saepe vero aspernatur totam pariatur, dicta neque aut
+                                                    itaque dignissimos placeat deserunt ipsa, asperiores vitae
+                                                    recusandae? Illum, temporibus.
+                                                </p>
+                                                <small>
+                                                    14-mei-2019
+                                                </small>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <b>Best Employee of The Year</b><br>
+                                                <small class="text-success">Penghargaan</small>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quam
+                                                    fugit libero saepe vero aspernatur totam pariatur, dicta neque aut
+                                                    itaque dignissimos placeat deserunt ipsa, asperiores vitae
+                                                    recusandae? Illum, temporibus.
+                                                </p>
+                                                <small>
+                                                    14-mei-2019
+                                                </small>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <b>Djarum Student Choise</b><br>
+                                                <small class="text-primary">Beasiswa</small>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quam
+                                                    fugit libero saepe vero aspernatur totam pariatur, dicta neque aut
+                                                    itaque dignissimos placeat deserunt ipsa, asperiores vitae
+                                                    recusandae? Illum, temporibus.
+                                                </p>
+                                                <small>
+                                                    14-mei-2019
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <form id="review-done" class="form-inline">
+                        <div class="form-group mx-sm-3">
+                            <select name="appplication_status" id="appplication_status" class="form-control">
+                                <option value="">Pilih Status Lamaran</option>
+                                <option value="reviewed">Tandai Sudah Direview</option>
+                                <option value="accepted">Terima Lamaran</option>
+                                <option value="rejected">Tolak Lamaran</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Selesai</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="app-status" tabindex="-1" aria-labelledby="statusModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="statusModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <textarea name="message" id="message" class="form-control" cols="30" rows="10"
+                                placeholder="Silahkan tinggalkan pesan atau instruksi selanjutnya pada pelamar ini"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Urungkan</button>
+                        <button type="button" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/public/plugins/jquery/jquery.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="/public/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/public/plugins/datatable/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.get("/public/data/applicant_dummy.json", function (data) {
+                const applicants = data.data
+
+                //filter pelamar
+                $("#showby").change(function () {
+                    filterby = $(this).val()
+                    var filterApplicant = $(applicants).filter(function (id) {
+                        return filterby == "all" ? applicants : applicants[id].status == filterby
+                    })
+                    var filteredApplicant = filterApplicant.toArray()
+
+                    //kosongkan konten html di #applicant
+                    $("#applicant").empty()
+
+                    //render pelemar yang terfilter
+                    filteredApplicant.forEach(applicant => {
+                        //application status color
+                        var dynamicStatusColor
+                        switch (applicant.status) {
+                            case "rejected":
+                                dynamicStatusColor = "text-danger"
+                                break
+                            case "accepted":
+                                dynamicStatusColor = "text-success"
+                                break
+                            case "reviewed":
+                                dynamicStatusColor = "text-primary"
+                                break
+                            default:
+                                dynamicStatusColor = "text-secondary"
+                                break
+                        }
+                        //render applicant
+                        $("#applicant").append(`
+                            <div class="col-sm-6">
+                                <div class="content-card">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <img src="${applicant.profile_pic}" class="rounded-circle d-block" alt="profile" height="100" width="100">
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <b>${applicant.name}</b>
+                                            <p>
+                                                ${applicant.title}
+                                                <br>
+                                                <small>
+                                                    melamar pada ${applicant.applied_at}
+                                                </small>
+                                            </p>
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#review_cv">Review CV</button>
+                                                </div>
+                                                <div>
+                                                    <b class="${dynamicStatusColor}">${applicant.status}</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `)
+                    })
+                })
+
+                //cari pelamar
+                $("#byname").submit(function (e) {
+                    e.preventDefault()
+                    var searchKey = $("#search_name").val()
+                    var result = []
+                    for (let i = 0; i < applicants.length; i++) {
+                        if (applicants[i].name.toLowerCase().match(searchKey.toLowerCase())) result.push(applicants[i])
+                        else continue
+                    }
+
+                    $("#applicant").empty()
+                    result.forEach(applicant => {
+                        //application status color
+                        var dynamicStatusColor
+                        switch (applicant.status) {
+                            case "rejected":
+                                dynamicStatusColor = "text-danger"
+                                break
+                            case "accepted":
+                                dynamicStatusColor = "text-success"
+                                break
+                            case "reviewed":
+                                dynamicStatusColor = "text-primary"
+                                break
+                            default:
+                                dynamicStatusColor = "text-secondary"
+                                break
+                        }
+                        //render applicant
+                        $("#applicant").append(`
+                            <div class="col-sm-6">
+                                <div class="content-card">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <img src="${applicant.profile_pic}" class="rounded-circle d-block" alt="profile" height="100" width="100">
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <b>${applicant.name}</b>
+                                            <p>
+                                                ${applicant.title}
+                                                <br>
+                                                <small>
+                                                    melamar pada ${applicant.applied_at}
+                                                </small>
+                                            </p>
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#review_cv">Review CV</button>
+                                                </div>
+                                                <div>
+                                                    <b class="${dynamicStatusColor}">${applicant.status}</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `)
+                    })
+                })
+
+                //append render applicant data
+                applicants.forEach(applicant => {
+                    //application status color
+                    var dynamicStatusColor
+                    switch (applicant.status) {
+                        case "rejected":
+                            dynamicStatusColor = "text-danger"
+                            break
+                        case "accepted":
+                            dynamicStatusColor = "text-success"
+                            break
+                        case "reviewed":
+                            dynamicStatusColor = "text-primary"
+                            break
+                        default:
+                            dynamicStatusColor = "text-secondary"
+                            break
+                    }
+
+                    //render applicant
+                    $("#applicant").append(`
+                        <div class="col-sm-6">
+                            <div class="content-card">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <img src="${applicant.profile_pic}" class="rounded-circle d-block" alt="profile" height="100" width="100">
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <b>${applicant.name}</b>
+                                        <p>
+                                            ${applicant.title}
+                                            <br>
+                                            <small>
+                                                melamar pada ${applicant.applied_at}
+                                            </small>
+                                        </p>
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#review_cv">Review CV</button>
+                                            </div>
+                                            <div>
+                                                <b class="${dynamicStatusColor}">${applicant.status}</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `)
+                })
+            })
+
+            //saat selesai review cv
+            $("#review-done").on("submit", function (e) {
+                e.preventDefault()
+                const status = $("#appplication_status").val()
+                if (status != "") $("#app-status").modal('show')
+                
+                switch (status) {
+                    case "rejected":
+                        $("#statusModalLabel").text("Tolak Lamaran")
+                        $("#message").attr("placeholder", "Silahkan berikan pesan atau alasan kenapa lamaran ini ditolak agar pelamar ini dapat belajar menjadi lebih baik")
+                        break;
+
+                    case "accepted":
+                        $("#statusModalLabel").text("Terima Lamaran")
+                        $("#message").attr("placeholder", "Silahkan berikan pesan atau instruksi selanjutnya")
+                        break;
+
+                    default:
+                        $("#statusModalLabel").text("Lamaran Telah Di Review")
+                        $("#message").attr("placeholder", "Silahkan berikan pesan atau instruksi selanjutnya")
+                        break;
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

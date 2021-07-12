@@ -1,0 +1,17 @@
+.applicant-info{
+    margin-bottom: 20px;
+    .label{
+        font-size:15px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+    
+    .info{
+        font-size: 15px;
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}

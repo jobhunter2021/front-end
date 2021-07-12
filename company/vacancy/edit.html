@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/plugins/select2-bootstrap4-theme-master/dist/select2-bootstrap4.min.css">
+    <link rel="stylesheet" href="/public/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="/public/plugins/summernote/summernote.min.css">
+    <link rel="stylesheet" href="/public/style/tagsinput.css">
+    <link rel="stylesheet" href="/public/style/main.css">
+
+    <!-- Scripts -->
+    <script src="/public/javascripts/maps.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">JH</a>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Lowongan</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kandidat</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PT. Karya Cipta Karsa
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb-custom d-flex justify-content-between">
+            <div>
+                <div class="title">
+                    Edit Lowongan 
+                </div>
+                <div class="description">
+                    <small>edit lowongan Anda</small>
+                </div>
+            </div>
+            
+            <div>
+                <a href="/company/vacancy/created-vacancy.html" class="btn btn-primary btn-sm">Kembali</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <form action="" method="post">
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <h1>
+                                Edit Lowongan
+                            </h1>
+                        </div>
+
+                        <div class="content-card-body">
+                            <div class="form-group">
+                                <label for="title">Judul Lowongan</label>
+                                <input type="text" name="title" class="form-control" id="title"
+                                    placeholder="Masukan judul untuk lowongan ini" value="Backend Programmer">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Deskripsi Pekerjaan</label>
+                                <textarea class="form-control" id="description" rows="3">
+                                    Dibutuhkan segera backend programmer ... 
+                                </textarea>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="salary">Gaji</label>
+                                        <input type="number" name="salary" class="form-control" id="salary"
+                                            placeholder="Masukan gaji" value="3500000">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="min_experience">Pengalaman Minimal</label>
+                                        <select name="min_experience" class="form-control" id="min_experience" value="1">
+                                            <option value="">Pilih pengalaman minimal</option>
+                                            <option value="for all">Untuk Semua</option>
+                                            <option value="fresh graduate">Fresh Graduate/Lulusan Baru</option>
+                                            <option value="1">1 tahun</option>
+                                            <option value="1 - 5"> 1 sampai 5 tahun</option>
+                                            <option value="5 - 10"> 5 sampai 10 tahun</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label for="portability">Portabilitas kerja</label>
+                                            <select class="form-control" id="portability">
+                                                <option value="all">Pilih portabilitas</option>
+                                                <option value="all">Semua</option>
+                                                <option value="remote">Remote/Jarak Jauh</option>
+                                                <option value="office">Office/Ditempat/Dikantor</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label for="portability">Jenis Pekerjaan</label>
+                                            <select class="form-control" id="portability">
+                                                <option value="all">Pilih jenis pekerjaan</option>
+                                                <option value="all">Semua</option>
+                                                <option value="fulltime">Fulltime/Purna Waktu</option>
+                                                <option value="parttime">Parttime/Paruh Waktu</option>
+                                                <option value="freelance">Freelance/Lepas</option>
+                                                <option value="internship">Internship/Magang</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="required_skill">Keahllian yang diperlukan</label>
+                                <input type="text" name="required_skill" id="required_skill" class="form-control"
+                                    data-role="tagsinput" value="" placeholder="Masukan keahlian" value="go,kotlin,nodejs">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <h1>
+                                Lokasi Lowongan
+                            </h1>
+                        </div>
+
+                        <div class="content-card-body">
+                            <div class="form-group">
+                                <p>
+                                    Silahkan tandai lokasi kemana pencari kerja harus datang jika ingin melamar secara
+                                    langsung
+                                    <br>
+                                    <small class="text-warning">kami akan menandai ke lokasi kantor anda secara default
+                                        (jika sudah diatur di profile Anda)</small>
+                                </p>
+                                <div id="map" class="maps-style"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <h1>
+                                Mode Walk In Interview
+                            </h1>
+                        </div>
+
+                        <div class="content-card-body">
+
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="strict_mode" type="checkbox" value=""
+                                        id="strict_mode">
+                                    <label class="form-check-label" for="strict_mode">
+                                        Walk In Interview
+                                    </label>
+                                    <small class="form-text text-muted">
+                                        Buat lowongan ini sebagai walk in interview
+                                    </small>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="salary">Tanggal Awal</label>
+                                        <input type="date" class="form-control" name="first_date" id="first_date">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="min_experience">Tanggal Akhir</label>
+                                        <input type="date" class="form-control" name="end_date" id="end_date">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label for="start_hour">Jam Mulai</label>
+                                            <input type="time" name="start_hour" id="start_hour" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label for="end_hour">Jam Selesai</label>
+                                            <input type="time" name="end_hour" id="end_hour" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <h1>
+                                Pengaturan Lowongan
+                            </h1>
+                        </div>
+
+                        <div class="content-card-body">
+                            <div class="form-group">
+                                <label for="publicity_status">Status Publisitas</label>
+                                <select name="publicity_status" id="publicity_status" class="form-control">
+                                    <option value="false">Pending / Tahan Lowongan Ini</option>
+                                    <option value="true">Publish / Publikasikan Lowongan Ini</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" id="broadcast_option_form" disabled="true">
+                                <label for="broadcast_option">Opsi Broadcast Lowongan</label>
+                                <select name="broadcast_option" id="broadcast_option" class="form-control">
+                                    <option value="all">Untuk Semua Pencari Kerja</option>
+                                    <option value="specific-skill">Untuk Pencari Kerja Dengan Keahlian Yang Diperlukan</option>
+                                    <option value="specific-sector">Untuk Pencari Kerja Dengan Ketertarikan Sektor Industri Yang Sama</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block" id="submit-button">
+                                    Simpan
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/public/plugins/jquery/jquery.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="/public/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/public/plugins/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="/public/plugins/summernote/summernote.min.js"></script>
+    <script src="/public/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="/public/plugins/Bootstrap-4-Tag-Input-Plugin-jQuery/tagsinput.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyoBHp_f5vlMtX9SW5U18wWBby8fW8JpQ&callback=initMap&libraries=&v=weekly"
+        async></script>
+    <script>
+        $(document).ready(function () {
+            $("#broadcast_option_form").hide()
+            $("#submit-button").text("Simpan")
+
+            $("#field").select2({
+                theme: 'bootstrap4'
+            })
+
+            $("#description").summernote({
+                height: 300,                 // set editor height
+                minHeight: null,             // set minimum height of editor
+                maxHeight: null,             // set maximum height of editor
+                focus: true                  // set focus to editable area after initializing summernote
+            })
+
+            $("#publicity_status").change(function () {
+                var isPublish = ($(this).val() === "true")
+                if (isPublish) {
+                    $("#broadcast_option_form").show()
+                    $("#submit-button").text("Publikasi Lowongan")
+                }
+                else {
+                    $("#broadcast_option_form").hide()
+                    $("#submit-button").text("Simpan")
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+{
+    "data" : [
+        {
+            "name" : "Emanuel Burges",
+            "status" : "waiting",
+            "title" : "backend engineer",
+            "applied_at" : "20-JUN-1990 08:03",
+            "profile_pic": "/public/img/man.jpg"
+        },
+
+        {
+            "name" : "Emely Rose",
+            "status" : "reviewed",
+            "title" : "backend engineer",
+            "applied_at" : "20-JUN-1990 08:03",
+            "profile_pic": "/public/img/woman1.jpg"
+        },
+
+        {
+            "name" : "Hilda B. Warens",
+            "status" : "rejected",
+            "title" : "backend engineer",
+            "applied_at" : "20-JUN-1990 08:03",
+            "profile_pic": "/public/img/woman2.png"
+        },
+
+        {
+            "name" : "Hilda Filova",
+            "status" : "rejected",
+            "title" : "backend engineer",
+            "applied_at" : "20-JUN-1990 08:03",
+            "profile_pic": "/public/img/woman2.png"
+        },
+
+        {
+            "name" : "John Frederick",
+            "status" : "accepted",
+            "title" : "backend engineer",
+            "applied_at" : "20-JUN-1990 08:03",
+            "profile_pic": "/public/img/man2.jpg"
+        },
+
+        {
+            "name" : "Johnny Walkers",
+            "status" : "reviewed",
+            "title" : "backend engineer",
+            "applied_at" : "20-JUN-1990 08:03",
+            "profile_pic": "/public/img/man3.jpg"
+        },
+
+        {
+            "name" : "Sir Churchill",
+            "status" : "accepted",
+            "title" : "java backend programmer",
+            "applied_at" : "20-JUN-1990 08:03",
+            "profile_pic": "/public/img/man2.jpg"
+        },
+
+        {
+            "name" : "Ghina",
+            "status" : "reviewed",
+            "title" : "backend engineer",
+            "applied_at" : "20-JUN-1990 08:03",
+            "profile_pic": "/public/img/man3.jpg"
+
+        }
+    ]
+}

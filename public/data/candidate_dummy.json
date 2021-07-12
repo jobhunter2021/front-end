@@ -1,0 +1,38 @@
+{
+    "candidate": [
+        {
+            "fullname":"John doe",
+            "title": "Backend Programmer",
+            "status": "ready",
+            "profile_pic": "/public/img/man.jpg"
+        },
+        
+        {
+            "fullname":"Jane doe",
+            "title": "Frontend Programmer",
+            "status": "employeed",
+            "profile_pic": "/public/img/woman1.jpg"
+        },
+        
+        {
+            "fullname":"Emanuel Burgess",
+            "title": "Backend Programmer",
+            "status": "ready",
+            "profile_pic": "/public/img/man2.jpg"
+        },
+        
+        {
+            "fullname":"Socrates",
+            "title": "Filosoper",
+            "status": "ready",
+            "profile_pic": "/public/img/man3.jpg"
+        },
+        
+        {
+            "fullname":"Zeno",
+            "title": "Founder of Stoic Filosophy",
+            "status": "ready",
+            "profile_pic": "/public/img/man3.jpg"
+        }
+    ]
+}

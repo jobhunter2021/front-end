@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/style/main.css">
+    <link rel="stylesheet" href="/public/plugins/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">JH</a>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PT. Karya Cipta Karsa
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class=" h-100 d-flex justify-content-center align-items-center">
+        <div class="custom-card-lg">
+            <div class="custom-card-header">
+                <h1>Verifikasi Akun</h1>
+                <p>
+                    <small>
+                        Silahkan verifikasi akun anda Kami telah mengirim kode verifikasi ke email anda
+                    </small>
+                </p>
+            </div>
+            
+            <div class="custom-card-body">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <input type="text" name="code" class="form-control" id="code" maxlength="6" placeholder="6 Digit kode rahasia">
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block">Verifikasi</button>
+                        <button class="btn btn-primary btn-block">Kirim Ulang Kode Verifikasi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/public/plugins/jquery/jquery.js"></script>
+    <script src="/public/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/plugins/datatable/datatables.min.css">
+    <link rel="stylesheet" href="/public/style/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">JH</a>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Lowongan</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kandidat</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PT. Karya Cipta Karsa
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb-custom d-flex justify-content-between">
+            <div>
+                <div class="title">
+                    Lowongan
+                </div>
+                <div class="description">
+                    <small>Lowongan kerja diperusahaan anda</small>
+                </div>
+            </div>
+
+            <div>
+                <a href="/company/vacancy/create-new.html" class="btn btn-primary btn-sm">Buat Lowongan</a>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <div class="content-card-header">
+                <h1>
+                    Daftar Lowongan
+                </h1>
+            </div>
+
+            <div class="content-card-body">
+                <table class="table" id="vacancy">
+                    <thead>
+                        <tr>
+                            <th scope="col">Judul</th>
+                            <th scope="col">Publisitas</th>
+                            <th scope="col">Pelamar</th>
+                            <th scope="col">Tgl Publish</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="/public/plugins/jquery/jquery.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="/public/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/public/plugins/datatable/datatables.min.js"></script>
+    <script>
+            $("#vacancy").DataTable({
+                "ajax":"/public/data/dumy_created_job.json",
+                "columns":[
+                    {"data":"title"},
+                    {
+                        "data":"publicity",
+                        "render":function(data, tyoe, rows) {
+                            return rows.publicity ? "Telah dipublikasi" : "Belum dipublikasi"
+                        }
+                    },
+                    {"data":"aplicant"},
+                    {"data":"published_at"},
+                    {
+                        "data":null,
+                        "render": function(data, type, row){
+                            return '<button class="btn btn-info"> Detail </button> <button class="btn btn-primary"> Edit </button> <button class="btn btn-danger"> Hapus </button>'
+                        }
+                    }
+                ]
+            })
+    </script>
+</body>
+
+</html>

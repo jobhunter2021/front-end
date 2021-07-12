@@ -1,0 +1,13 @@
+@import "../plugins/bootstrap/scss/bootstrap.scss";
+@import "customcard";
+@import "form";
+@import "select2";
+@import "breadcrumb";
+@import "maps";
+@import "vacancy";
+@import "modal";
+@import "applicant";
+
+html,body{
+    height: 100%;
+}

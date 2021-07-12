@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Database Kandidate</title>
+    <link rel="stylesheet" href="/public/plugins/select2-bootstrap4-theme-master/dist/select2-bootstrap4.min.css">
+    <link rel="stylesheet" href="/public/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/style/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">JH</a>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Lowongan</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Kandidat</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PT. Karya Cipta Karsa
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb-custom d-flex justify-content-between">
+            <div>
+                <div class="title">
+                    Database Kandidat
+                </div>
+
+                <div class="description">
+                    <small>Cari kandidat untuk perusahaan anda</small>
+                </div>
+            </div>
+
+            <div>
+                <form id="bread-form" class="form-inline">
+                    <input type="text" name="search" id="search" class="form-control form-control-sm"
+                        placeholder="Cari nama kandidat">
+
+                    <button class="btn btn-primary btn-sm ml-2" data-toggle="modal" data-target="#filter-modal">
+                        Filter kandidat
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row" id="candidate-list">
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="filter-modal" data-backdrop="static" data-keyboard="false" aria-labelledby="filterLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="filterLabel">Filtrasi kandidat</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form>
+                    <div class="modal-body" style="overflow:hidden; max-height: 800px;">
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="work_status">Status Kerja</label>
+                                    <select class="form-control" id="work_status">
+                                        <option value="all">Pilih Status Kerja Kandidat</option>
+                                        <option value="all">Semua Status Kerja</option>
+                                        <option value="ready">Hanya Yang Siap Kerja</option>
+                                        <option value="employeed">Hanya Yang Sudah Kerja</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="portability">Portabilitas kerja</label>
+                                        <select class="form-control" id="portability">
+                                            <option value="all">Pilih portabilitas</option>
+                                            <option value="all">Semua</option>
+                                            <option value="remote">Remote/Jarak Jauh</option>
+                                            <option value="office">Office/Ditempat/Dikantor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="work_type">Jenis Pekerjaan</label>
+                                        <select class="form-control" id="work_type">
+                                            <option value="all">Pilih jenis pekerjaan</option>
+                                            <option value="all">Semua</option>
+                                            <option value="fulltime">Fulltime/Purna Waktu</option>
+                                            <option value="parttime">Parttime/Paruh Waktu</option>
+                                            <option value="freelance">Freelance</option>
+                                            <option value="internship">Internship/Magang</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="candidate_field">Industri Kandidat</label>
+                            <select name="candidate_field[]" class="form-control js-example-basic-multiple"
+                                id="candidate_field" multiple="multiple">
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Urungkan</button>
+                        <button type="button" class="btn btn-primary">Filter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/public/plugins/jquery/jquery.js"></script>
+    <script src="/public/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/public/plugins/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            //select 2
+            $.getJSON("/public/data/industries.json", function (data) {
+                const industries_data = data.industries
+                industries_data.forEach(element => {
+                    console.log(element)
+                    $("#candidate_field").append(`<option value="${element}">${element}</option>`)
+                })
+            }).fail(function () {
+                console.log("error euy")
+            })
+
+            $("#candidate_field").select2({
+                theme: 'bootstrap4',
+                dropdownParent: $('#filter-modal .modal-content')
+            })
+
+            //search
+            $("#bread-form").submit(function (e) {
+                e.preventDefault()
+            })
+
+            //get candidate
+            $.get("/public/data/candidate_dummy.json", function (res) {
+                const candidates = res.candidate
+
+                candidates.forEach(candidate => {
+                    var statusText
+                    switch (candidate.status) {
+                        case "ready":
+                            statusText = "Siap Berkerja"
+                            break;
+
+                        default:
+                            statusText = "Sudah Berkerja"
+                            break;
+                    }
+
+                    $("#candidate-list").append(`
+                        <div class="col-3">
+                            <div class="content-card">
+                                <img src="${candidate.profile_pic}" class="rounded-circle mx-auto d-block mb-3" height="100" width="100" alt="Avatar">
+                                <center>
+                                    <div>
+                                        <b>${candidate.fullname}</b>
+                                        <p class="text-muted">${candidate.title}</p>
+
+                                        <p class="my-4"><b>${statusText}</b></p>
+                                    </div>
+
+                                    <button class="btn btn-secondary">Lihat CV</button>
+                                </center>
+                            </div>
+                        </div>
+                    `)
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
