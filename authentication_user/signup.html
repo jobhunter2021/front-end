@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
         <a class="navbar-brand" href="#">JH</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,28 +32,32 @@
             </ul>
         </div>
     </nav>
+
     <div class="h-100 d-flex justify-content-center align-items-center">
         <div class="custom-card-lg">
             <div class="custom card-header bg-white">
-                <h4 class="">Sign In</h4>
-                <p>or <a href="signup.html">Create new account</a></p>
+                <h4>Sign Up</h4>
+                <p>or <a href="signin.html">Sign in to your account</a></p>
             </div>
 
             <div class="custom-card-body">
                 <form action="" method="post">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Enter Your Fullname">
+                    </div>
                     <div class="form-group">
                         <input type="text" name="email" class="form-control" placeholder="Enter Your Email">
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" class="form-control" placeholder="Enter Your Password">
                     </div>
-                    <div class="form-check mb-5">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                    <div class="form-group mb-5">
+                        <input type="password" name="password" class="form-control" placeholder="Confirm Your Password">
                     </div>
-                    <button type="button" class="btn btn-dark btn-md btn-block rounded-pill">Sign In</button>
+                  
+                    <button type="button" class="btn btn-dark btn-md btn-block rounded-pill">Sign Up</button>
                     <button type="button" class="mb-3 btn btn-dark btn-md btn-block rounded-pill">Continue With Gmail</button>
-                    <a href="">Forgot Your Password?</a>
+                    <p> <i>by clicking signup,you agree to our <a href="">Terms</a> and have read and acknowladge our <a href="">Privacy Statement</a> </i> </p>
                 </form>
             </div>
         </div>
