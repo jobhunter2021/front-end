@@ -11,35 +11,50 @@
 </head>
 
 <body>
-    <div class=" h-100 d-flex justify-content-center align-items-center">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">JH</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto  ">
+                    <li class="nav-item" aria-haspopup="true">
+                        <a href="" class="nav-link text-light">Vacancy</a>
+                    </li>
+                    <li class="nav-item" aria-haspopup="true">
+                        <a href="" class="nav-link text-light">Blog</a>
+                    </li>
+                    <li class="nav-item" aria-haspopup="true">
+                        <a href="" class="nav-link text-light">Sign In</a>
+                    </li>
+                    <li class="nav-item" aria-haspopup="true">
+                        <a class="nav-link btn btn-light bg-transparent text-light ">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-100 d-flex justify-content-center align-items-center">
         <div class="custom-card-lg">
             <div class="custom-card-header">
-                <h1>Registrasi</h1>
+                <h1>Sign Up Perusahaan</h1>
                 <p>
-                    Atau <a href="/authentication/signin.html">masuk dengan akun Anda</a>
+                    Atau <a href="/authentication/signin.html">sogn-in ke akun Anda</a>
                 </p>
             </div>
             <div class="custom-card-body">
                 <form action="#" method="post">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <input name="first_name" type="text" class="form-control" id="first_name"
-                                    placeholder="Nama depan">
-                            </div>
-                        </div>
 
-                        <div class="col-6">
-                            <div class="form-group">
-                                <input name="last_name" type="text" class="form-control" id="last-name"
-                                    placeholder="Nama belakang">
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Nama Perusahaan">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" name="birth_date" id="birth_date" class="form-control"
-                            placeholder="Tanggal lahir" onfocus="(this.type='date')" onblur="(this.type='text')">
+                        <input type="text" name="established_at" id="established_at" class="form-control"
+                            placeholder="Berdiri Sejak" onfocus="(this.type='date')" onblur="(this.type='text')">
                     </div>
 
                     <div class="form-group">
@@ -66,24 +81,16 @@
                         <input type="password" name="confirm_password" class="form-control" id="confirm_password"
                             placeholder="Konfirmasi kata sandi">
                     </div>
-                  
-                    <div class="form-group">
-                        <p>
-                            <small>
-                                Saya menyetujui <a href="">persyaratan</a> dan telah membaca
-                                dan mengakui <a href="">pernyataan privasi</a>.
-                            </small>
-                        </p>
-                    </div>
 
-                    <div class="form-group">
-                        <button class="btn btn-primary btn-block">Daftar</button>
-                        <button class="btn btn-success btn-block">Lanjutkan dengan Gmail</button>
-                    </div>
-
-                    <div class="form-group">
-                        Daftar sebagai perusahaan <a href="/authentication/company-signup.html">disini</a> 
-                    </div>
+                    <button type="button" class="btn btn-dark btn-md btn-block rounded-pill">Sign Up</button>
+                    <button type="button" class="mb-3 btn btn-dark btn-md btn-block rounded-pill">Continue With
+                        Gmail</button>
+                    <center>
+                        <p>atau</p>
+                    </center>
+                    <button class="btn btn-dark btn-md btn-block rounded-pill">Sign Up Sebagai Pencaker</button>
+                    <p class="mt-4"> <i>dengan men-klick sign up,Anda setuju dengan <a href="">ketentuan</a> dan telah
+                            membaca dan mengetahui <a href="">statement pripasi</a> kami</i> </p>
                 </form>
             </div>
         </div>
