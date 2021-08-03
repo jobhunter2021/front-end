@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bookmark Kandidat</title>
+    <link rel="stylesheet" href="/public/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/style/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">JH</a>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Lowongan</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Kandidat</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PT. Karya Cipta Karsa
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb-custom">
+            <div class="title">
+                Bookmark Kandidat
+            </div>
+
+            <div class="description">
+               <p class="text-muted">
+                    Kandidat yang anda bookmark
+               </p>
+            </div>
+        </div>
+
+        <form action="#" method="POST">
+            <div class="form-group">
+                <input type="text" name="search-name" id="search-name" class="form-control" placeholder="Cari Nama Kandidat">
+            </div>
+        </form>
+
+        <div class="row" id="candidate-list">
+
+        </div>
+    </div>
+
+    <script src="/public/plugins/jquery/jquery.js"></script>
+    <script src="/public/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //get candidate
+            $.get("/public/data/candidate_dummy.json", function (res) {
+                const candidates = res.candidate
+
+                candidates.forEach(candidate => {
+                    var statusText
+                    switch (candidate.status) {
+                        case "ready":
+                            statusText = "Siap Berkerja"
+                            break;
+
+                        default:
+                            statusText = "Sudah Berkerja"
+                            break;
+                    }
+
+                    $("#candidate-list").append(`
+                        <div class="col-3">
+                            <div class="content-card">
+                                <img src="${candidate.profile_pic}" class="rounded-circle mx-auto d-block mb-3" height="100" width="100" alt="Avatar">
+                                <center>
+                                    <div>
+                                        <b>${candidate.fullname}</b>
+                                        <p class="text-muted">${candidate.title}</p>
+
+                                        <p class="my-4"><b>${statusText}</b></p>
+                                    </div>
+
+                                    <button class="btn btn-secondary">Lihat CV</button>
+                                </center>
+                            </div>
+                        </div>
+                    `)
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign In Pencaker</title>
     <link rel="stylesheet" href="/public/style/main.css">
     <link rel="stylesheet" href="/public/plugins/bootstrap/dist/css/bootstrap.min.css">
-
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto  ">
                     <li class="nav-item" aria-haspopup="true">
-                        <a href="" class="nav-link text-light">Vacancy</a> 
+                        <a href="" class="nav-link text-light">Lowongan</a> 
                     </li>
                     <li class="nav-item" aria-haspopup="true">
                         <a href="" class="nav-link text-light">Blog</a> 
@@ -33,30 +33,30 @@
                 </ul>
             </div>
         </div>
-        
     </nav>
 
     <div class="h-100 d-flex justify-content-center align-items-center">
         <div class="custom-card-lg">
-            <div class="custom card-header bg-white">
-                <h4>Reset Password</h4>
-                <p>or <a href="signin.html">Sign in to your account</a></p>
+            <div class="custom-card-header bg-white">
+                <h1 class="">Sign In Pencari Kerja</h1>
+                <p class="text-muted">
+                    Isi kredensial dengan lengkap atau <a href="#">sign up</a> jika belum punya akun
+                </p>
             </div>
 
             <div class="custom-card-body">
                 <form action="" method="post">
                     <div class="form-group">
-                        <input type="text" name="code" class="form-control" placeholder="Enter Your Reset Code">
+                        <input type="text" name="email" class="form-control" placeholder="Enter Your Email">
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" class="form-control" placeholder="Enter Your Password">
                     </div>
-                    <div class="form-group mb-5">
-                        <input type="password" name="password" class="form-control" placeholder="Confirm Your Password">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-dark btn-md btn-block rounded-pill">Sign In</button>
                     </div>
-                  
-                    
-                    <button type="button" class="mb-3 btn btn-dark btn-md btn-block rounded-pill">Reset Password</button>
+                
+                    <a href="#">Lupa Password</a>
                 </form>
             </div>
         </div>

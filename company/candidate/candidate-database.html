@@ -43,120 +43,103 @@
     </nav>
 
     <div class="container">
-        <div class="breadcrumb-custom d-flex justify-content-between">
-            <div>
-                <div class="title">
-                    Database Kandidat
-                </div>
-
-                <div class="description">
-                    <small>Cari kandidat untuk perusahaan anda</small>
-                </div>
+        <div class="breadcrumb-custom">
+            <div class="title">
+                Database Kandidat
             </div>
 
-            <div>
-                <form id="bread-form" class="form-inline">
-                    <input type="text" name="search" id="search" class="form-control form-control-sm"
-                        placeholder="Cari nama kandidat">
-
-                    <button class="btn btn-primary btn-sm ml-2" data-toggle="modal" data-target="#filter-modal">
-                        Filter kandidat
-                    </button>
-                </form>
+            <div class="description">
+                <p class="text-muted">
+                    Temukan kandidat terbaik untuk perusahaan anda
+                </p>
             </div>
         </div>
 
-        <div class="row" id="candidate-list">
-
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="filter-modal" data-backdrop="static" data-keyboard="false" aria-labelledby="filterLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="filterLabel">Filtrasi kandidat</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form>
-                    <div class="modal-body" style="overflow:hidden; max-height: 800px;">
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-group">
-                                    <label for="work_status">Status Kerja</label>
-                                    <select class="form-control" id="work_status">
-                                        <option value="all">Pilih Status Kerja Kandidat</option>
-                                        <option value="all">Semua Status Kerja</option>
-                                        <option value="ready">Hanya Yang Siap Kerja</option>
-                                        <option value="employeed">Hanya Yang Sudah Kerja</option>
-                                    </select>
-                                </div>
+        <!-- form filter & search -->
+        <form action="#" method="POST" id="form-filter">
+            <div class="form-group">
+                <input type="text" name="search-name" id="search-name" class="form-control" placeholder="Cari nama atau title kandidat">
+            </div>
+            
+            <!-- content row -->
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <h4>Filter Kandidat</h4>
+                        </div>
+                        <div class="content-card-body">
+                            <div class="form-group">
+                                <label for="work_status">Status Kerja</label>
+                                <select name="work_status" id="work_status" class="form-control">
+                                    <option value="all">Pilih Status Kerja</option>
+                                    <option value="all">Semua</option>
+                                    <option value="ready">Siap Kerja</option>
+                                    <option value="employeed">Sudah Berkerja</option>
+                                </select>
                             </div>
-
-                            <div class="col-4">
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        <label for="portability">Portabilitas kerja</label>
-                                        <select class="form-control" id="portability">
-                                            <option value="all">Pilih portabilitas</option>
-                                            <option value="all">Semua</option>
-                                            <option value="remote">Remote/Jarak Jauh</option>
-                                            <option value="office">Office/Ditempat/Dikantor</option>
-                                        </select>
-                                    </div>
-                                </div>
+    
+                            <div class="form-group">
+                                <label for="portability">Portabilitas</label>
+                                <select name="portability" id="portability" class="form-control">
+                                    <option value="all">Pilih Portabilitas</option>
+                                    <option value="all">Semua</option>
+                                    <option value="remote">Remote</option>
+                                    <option value="office">Kantor</option>
+                                </select>
                             </div>
-
-                            <div class="col-4">
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        <label for="work_type">Jenis Pekerjaan</label>
-                                        <select class="form-control" id="work_type">
-                                            <option value="all">Pilih jenis pekerjaan</option>
-                                            <option value="all">Semua</option>
-                                            <option value="fulltime">Fulltime/Purna Waktu</option>
-                                            <option value="parttime">Parttime/Paruh Waktu</option>
-                                            <option value="freelance">Freelance</option>
-                                            <option value="internship">Internship/Magang</option>
-                                        </select>
-                                    </div>
-                                </div>
+    
+                            <div class="form-group">
+                                <label for="work_type">Jenis Kerja</label>
+                                <select name="work_type" id="work_type" class="form-control">
+                                    <option value="all">Pilih Jenis Kerja</option>
+                                    <option value="all">Semua</option>
+                                    <option value="fulltime">Purna Waktu</option>
+                                    <option value="parttime">Paruh Waktu</option>
+                                    <option value="freelance">Freelance</option>
+                                    <option value="internship">Magang</option>
+                                </select>
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="min_salary">Gaji Minimum</label>
+                                <input type="number" name="min_salary" id="min_salary" class="form-control" min="0" placeholder="Gaji Minimal">
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="max_salary">Gaji Maksimum</label>
+                                <input type="number" name="max_salary" id="max_salary" class="form-control" min="0" placeholder="Gaji Maksimal">
+                            </div>
+    
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-dark btn-block">
+                                    Filter
+                                </button>
                             </div>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="candidate_field">Industri Kandidat</label>
-                            <select name="candidate_field[]" class="form-control js-example-basic-multiple"
-                                id="candidate_field" multiple="multiple">
-                            </select>
-                        </div>
+                    </div>
+                </div>
+        </form>
+        <!-- end form filter & search -->
 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Urungkan</button>
-                        <button type="button" class="btn btn-primary">Filter</button>
-                    </div>
-                </form>
+            <div class="col-md-9">
+                <div class="row" id="candidate-list">
+        
+                </div>
             </div>
         </div>
+        <!-- end content row -->
     </div>
 
     <script src="/public/plugins/jquery/jquery.js"></script>
     <script src="/public/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/public/plugins/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
-
     <script>
         $(document).ready(function () {
-            //select 2
+            // inisiasi select 2
             $.getJSON("/public/data/industries.json", function (data) {
                 const industries_data = data.industries
                 industries_data.forEach(element => {
-                    console.log(element)
                     $("#candidate_field").append(`<option value="${element}">${element}</option>`)
                 })
             }).fail(function () {
@@ -168,12 +151,7 @@
                 dropdownParent: $('#filter-modal .modal-content')
             })
 
-            //search
-            $("#bread-form").submit(function (e) {
-                e.preventDefault()
-            })
-
-            //get candidate
+            // get candidate
             $.get("/public/data/candidate_dummy.json", function (res) {
                 const candidates = res.candidate
 
@@ -190,7 +168,7 @@
                     }
 
                     $("#candidate-list").append(`
-                        <div class="col-3">
+                        <div class="col-md-4">
                             <div class="content-card">
                                 <img src="${candidate.profile_pic}" class="rounded-circle mx-auto d-block mb-3" height="100" width="100" alt="Avatar">
                                 <center>
@@ -207,6 +185,18 @@
                         </div>
                     `)
                 })
+            })
+
+            // filter submit
+            $("#form-filter").submit(function(e){
+                e.preventDefault()
+                var form = $(this)
+                var method = form.attr("method")
+                var url = form.attr("action")
+                var data = form.serializeArray()
+                console.log(method);
+                console.log(url);
+                console.log(data);
             })
         })
     </script>

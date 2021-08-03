@@ -11640,6 +11640,10 @@ a.text-dark:hover, a.text-dark:focus {
   max-width: 80% !important;
 }
 
+.modal-sm {
+  max-width: 50% !important;
+}
+
 .applicant-info {
   margin-bottom: 20px;
 }
@@ -11662,5 +11666,18 @@ a.text-dark:hover, a.text-dark:focus {
 
 html, body {
   height: 100%;
+  position: relative;
+  margin: 0;
+  padding-bottom: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.caret-off::before {
+  display: none !important;
+}
+
+.caret-off::after {
+  display: none !important;
 }
 /*# sourceMappingURL=main.css.map */

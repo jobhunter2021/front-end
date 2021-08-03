@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/public/style/main.css">
+    <title>Sign Up Perekrut</title>
+    <link rel="stylesheet" href="/public/plugins/select2-bootstrap4-theme-master/dist/select2-bootstrap4.min.css">
     <link rel="stylesheet" href="/public/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/style/main.css">
 </head>
 
 <body>
@@ -18,10 +19,11 @@
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto  ">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item" aria-haspopup="true">
-                        <a href="" class="nav-link text-light">Vacancy</a>
+                        <a href="" class="nav-link text-light">Lowongan</a>
                     </li>
                     <li class="nav-item" aria-haspopup="true">
                         <a href="" class="nav-link text-light">Blog</a>
@@ -40,57 +42,59 @@
     <div class="h-100 d-flex justify-content-center align-items-center">
         <div class="custom-card-lg">
             <div class="custom-card-header">
-                <h1>Sign Up Perusahaan</h1>
-                <p>
-                    Atau <a href="/authentication/signin.html">sogn-in ke akun Anda</a>
+                <h1>Sign Up Perekrut</h1>
+                <p class="text-muted">
+                    Silahkan isi formulir dengan lengkap atau jika sudah punya akun silahkan <a href="#">sign in</a> untuk langsung masuk
                 </p>
             </div>
             <div class="custom-card-body">
                 <form action="#" method="post">
-
                     <div class="form-group">
                         <input name="name" type="text" class="form-control" id="name" placeholder="Nama Perusahaan">
                     </div>
-
                     <div class="form-group">
                         <input type="text" name="established_at" id="established_at" class="form-control"
                             placeholder="Berdiri Sejak" onfocus="(this.type='date')" onblur="(this.type='text')">
                     </div>
-
                     <div class="form-group">
                         <input name="contact" type="text" class="form-control" id="contact"
                             placeholder="Kontak (Handphone, ID Line, WA dll)">
                     </div>
-
                     <div class="form-group">
                         <input name="address" type="text" class="form-control" id="address"
                             placeholder="Alamat lengkap">
                     </div>
-
+                    <div class="form-group">
+                        <select name="field" class="form-control" id="field">
+                            <option value="" class="text-muted">Sektor Industri</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
                             placeholder="Email">
                     </div>
-
                     <div class="form-group">
                         <input type="password" name="password" class="form-control" id="password"
                             placeholder="Kata sandi">
                     </div>
-
                     <div class="form-group">
                         <input type="password" name="confirm_password" class="form-control" id="confirm_password"
                             placeholder="Konfirmasi kata sandi">
                     </div>
-
-                    <button type="button" class="btn btn-dark btn-md btn-block rounded-pill">Sign Up</button>
-                    <button type="button" class="mb-3 btn btn-dark btn-md btn-block rounded-pill">Continue With
-                        Gmail</button>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-dark btn-md btn-block rounded-pill">Sign Up</button>
+                    </div>
                     <center>
-                        <p>atau</p>
+                        <p>Atau</p>
                     </center>
-                    <button class="btn btn-dark btn-md btn-block rounded-pill">Sign Up Sebagai Pencaker</button>
-                    <p class="mt-4"> <i>dengan men-klick sign up,Anda setuju dengan <a href="">ketentuan</a> dan telah
-                            membaca dan mengetahui <a href="">statement pripasi</a> kami</i> </p>
+                    <div class="form-group">
+                        <a href="#" class="btn btn-dark btn-md btn-block rounded-pill">Sign Up Sebagai Pencaker</a>
+                        <p class="mt-4">
+                            <i>
+                                dengan menklik sign up Anda setuju dengan <a href="#">ketentuan</a> dan telah membaca serta mengetahui <a href="#">statement pripasi</a>kami
+                            </i>
+                        </p>
+                    </div>
                 </form>
             </div>
         </div>
@@ -98,6 +102,23 @@
 
     <script src="/public/plugins/jquery/jquery.js"></script>
     <script src="/public/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/public/plugins/select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.getJSON("/public/data/industries.json", function (data) {
+                const industries_data = data.industries
+                industries_data.forEach(element => {
+                    $("#field").append(`<option value="${element}">${element}</option>`)
+                })
+            }).fail(function () {
+                console.log("error euy")
+            })
+
+            $("#field").select2({
+                theme: 'bootstrap4'
+            })
+        })
+    </script>
 </body>
 
 </html>

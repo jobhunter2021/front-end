@@ -7,7 +7,20 @@
 @import "vacancy";
 @import "modal";
 @import "applicant";
+@import "notificcation";
 
 html,body{
     height: 100%;
+    position: relative;
+    margin: 0;
+    padding-bottom: 100px; //height of the footer
+    box-sizing: border-box;
+}
+
+.caret-off::before {
+    display: none !important
+}
+
+.caret-off::after {
+    display: none !important
 }

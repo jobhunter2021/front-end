@@ -67,6 +67,7 @@
         <div class="row">
             <div class="col-12">
                 <form action="" method="post">
+                    <!-- basic information -->
                     <div class="content-card">
                         <div class="content-card-header">
                             <h1>
@@ -148,28 +149,9 @@
                             </div>
                         </div>
                     </div>
+                    <!-- end basic information -->
 
-                    <div class="content-card">
-                        <div class="content-card-header">
-                            <h1>
-                                Lokasi Lowongan
-                            </h1>
-                        </div>
-
-                        <div class="content-card-body">
-                            <div class="form-group">
-                                <p>
-                                    Silahkan tandai lokasi kemana pencari kerja harus datang jika ingin melamar secara
-                                    langsung
-                                    <br>
-                                    <small class="text-warning">kami akan menandai ke lokasi kantor anda secara default
-                                        (jika sudah diatur di profile Anda)</small>
-                                </p>
-                                <div id="map" class="maps-style"></div>
-                            </div>
-                        </div>
-                    </div>
-
+                    <!-- walkin interview mode -->
                     <div class="content-card">
                         <div class="content-card-header">
                             <h1>
@@ -229,7 +211,31 @@
                             </div>
                         </div>
                     </div>
+                    <!-- end walkin interview mode  -->
 
+                    <!-- lokasi lowongan -->
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <h1>
+                                Lokasi Lowongan
+                            </h1>
+                        </div>
+
+                        <div class="content-card-body">
+                            <div class="form-group">
+                                <p>
+                                    Silahkan tandai lokasi kemana pencari kerja harus datang jika ingin melamar secara
+                                    langsung
+                                    <br>
+                                    <small class="text-muted">kami akan menandai ke lokasi kantor anda secara default (jika sudah diatur di profile Anda)</small>
+                                </p>
+                                <div id="map" class="maps-style"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- lokasi lowongan -->
+
+                    <!-- pengaturan lowongan -->
                     <div class="content-card">
                         <div class="content-card-header">
                             <h1>
@@ -262,6 +268,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- end pengaturan lowongan -->
                 </form>
             </div>
         </div>
@@ -274,10 +281,9 @@
     <script src="/public/plugins/summernote/summernote.min.js"></script>
     <script src="/public/plugins/summernote/summernote-bs4.min.js"></script>
     <script src="/public/plugins/Bootstrap-4-Tag-Input-Plugin-jQuery/tagsinput.js"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyoBHp_f5vlMtX9SW5U18wWBby8fW8JpQ&callback=initMap&libraries=&v=weekly"
-        async></script>
-    <script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyoBHp_f5vlMtX9SW5U18wWBby8fW8JpQ&callback=initMap&libraries=&v=weekly" async></script>
+   
+   <script>
         $(document).ready(function () {
             $("#broadcast_option_form").hide()
             $("#submit-button").text("Simpan")
